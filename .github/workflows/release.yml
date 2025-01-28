@@ -54,6 +54,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          target/release/krak2.exe
+          target/release/${{ matrix.sys }}_krak2.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
