@@ -48,6 +48,9 @@ jobs:
     - name: Run tests
       shell: msys2 {0}
       run: cargo test --release
+    - name: Rename Compile Output
+      shell: msys2 {0}
+      run: mv target/release/krak2.exe target/release/${{ matrix.sys }}_krak2.exe
     - name: Release with Notes
       uses: softprops/action-gh-release@v1
       with:
